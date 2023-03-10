@@ -1,0 +1,146 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 50px 20px 70px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  background-color: #06070d;
+  color: #fff;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+}
+
+.btn {
+  max-width: 200px;
+  width: 100%;
+  padding: 20px;
+  border: none;
+  background-image: linear-gradient(115deg, #4cddbd, #06f286);
+  color: #06070d;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  filter: brightness(1.07);
+  cursor: pointer;
+}
+
+a {
+  color: #fff;
+}
+
+#home {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min-content, 200px));
+  justify-content: space-between;
+  align-items: center;
+  grid-gap: 25px;
+  max-width: 1125px;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  #home {
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 700px;
+  width: 100%;
+  padding: 50px;
+  background-color: #22272b;
+}
+#user section {
+  text-align: center;
+  line-height: 1.8;
+}
+#user #name {
+  background: -webkit-linear-gradient(115deg, #06f286, #4cddbd);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+#user #username {
+  font-size: 20px;
+  text-transform: lowercase;
+  opacity: 0.5;
+}
+#user #company-name {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+#user #company-bs {
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+#user #company-catch-phrase {
+  font-size: 16px;
+  text-transform: lowercase;
+}
+#user #address span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  opacity: 0.5;
+}
+#user #internet {
+  text-transform: lowercase;
+}
+
+#posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1125px;
+  width: 100%;
+}
+#posts section {
+  width: 100%;
+  padding: 50px;
+  background-color: #22272b;
+}
+#posts h1,
+#posts h2 {
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+#posts h1 {
+  font-size: 32px;
+  text-align: center;
+}
+#posts h2 {
+  background: -webkit-linear-gradient(115deg, #06f286, #4cddbd);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 24px;
+}
+#posts h2::first-letter,
+#posts p::first-letter {
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=styles.css.map */

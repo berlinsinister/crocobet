@@ -1,0 +1,193 @@
+// colors
+$colors-primary-main: #4cddbd;
+$colors-primary-aux: #06f286;
+
+$colors-secondary-main: #22272b;
+$colors-secondary-aux: #06070d;
+
+// layout
+$layout-max-width-primary: 1125px;
+
+$layout-padding-primary: 50px;
+
+// inputs
+$input-width-primary: 200px;
+
+// fonts
+$fonts-family-primary: 'Roboto', Arial, Helvetica, sans-serif;
+
+$fonts-sizes-small: 14px;
+$fonts-sizes-medium: 16px;
+$fonts-sizes-large: 20px;
+$fonts-sizes-xlarge: 24px;
+$fonts-sizes-xxlarge: 32px;
+
+// breakpoints
+$breakpoint-mobile: 375px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+$breakpoint-desktop: 1170px;
+
+// mixins
+@mixin gradient-text {
+  background: -webkit-linear-gradient(
+    115deg,
+    $colors-primary-aux,
+    $colors-primary-main
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// general layout
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 50px 20px 70px;
+  font-family: $fonts-family-primary;
+  font-weight: 300;
+  background-color: $colors-secondary-aux;
+  color: #fff;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+}
+
+.btn {
+  max-width: $input-width-primary;
+  width: 100%;
+  padding: 20px;
+  border: none;
+  background-image: linear-gradient(
+    115deg,
+    $colors-primary-main,
+    $colors-primary-aux
+  );
+  color: $colors-secondary-aux;
+  transition: all 0.2s ease;
+  &:hover {
+    filter: brightness(1.07);
+    cursor: pointer;
+  }
+}
+
+a {
+  color: #fff;
+}
+
+// home
+#home {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min-content, $input-width-primary)
+  );
+  justify-content: space-between;
+  align-items: center;
+  grid-gap: 25px;
+  max-width: $layout-max-width-primary;
+  width: 100%;
+  @media screen and (max-width: $breakpoint-tablet) {
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// user
+#user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 700px;
+  width: 100%;
+  padding: $layout-padding-primary;
+  background-color: $colors-secondary-main;
+  section {
+    text-align: center;
+    line-height: 1.8;
+  }
+  #name {
+    @include gradient-text;
+    font-size: $fonts-sizes-xxlarge;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  #username {
+    font-size: $fonts-sizes-large;
+    text-transform: lowercase;
+    opacity: 0.5;
+  }
+  #company {
+    &-name {
+      font-size: $fonts-sizes-xlarge;
+      text-transform: uppercase;
+    }
+    &-bs {
+      text-transform: capitalize;
+      text-decoration: underline;
+    }
+    &-catch-phrase {
+      font-size: $fonts-sizes-medium;
+      text-transform: lowercase;
+    }
+  }
+  #address {
+    span {
+      display: block;
+      margin-bottom: 10px;
+      font-size: $fonts-sizes-small;
+      opacity: 0.5;
+    }
+  }
+  #internet {
+    text-transform: lowercase;
+  }
+}
+
+// posts
+#posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: $layout-max-width-primary;
+  width: 100%;
+  section {
+    width: 100%;
+    padding: $layout-padding-primary;
+    background-color: $colors-secondary-main;
+  }
+  h1,
+  h2 {
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+  h1 {
+    font-size: $fonts-sizes-xxlarge;
+    text-align: center;
+  }
+  h2 {
+    @include gradient-text;
+    font-size: $fonts-sizes-xlarge;
+  }
+  h2::first-letter,
+  p::first-letter {
+    text-transform: uppercase;
+  }
+}
